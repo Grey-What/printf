@@ -39,7 +39,7 @@ int print_char(char c)
 */
 int _printf(const char *format, ...)
 {
-	int i = 0, count = 0;
+	int i, count = 0;
 	char temp, *temp_s;
 	va_list arg;
 
@@ -47,8 +47,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -77,7 +76,6 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			count++;
 		}
-		i++;
 	}
 	va_end(arg);
 	return (count);
