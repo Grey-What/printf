@@ -34,6 +34,9 @@ int _printf(const char *format, ...)
 			case 's':
 				temp_s = va_arg(arg, char *);
 
+				if (temp_s == NULL)
+					return (-1);
+
 				for (j = 0; temp_s[j] != '\0'; j++)
 				{
 					_putchar(temp_s[j]);
@@ -45,8 +48,7 @@ int _printf(const char *format, ...)
 				count++;
 				break;
 			default:
-				i++;
-				break;
+				return (-1);
 			}
 		}
 		else
