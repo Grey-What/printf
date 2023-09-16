@@ -1,16 +1,46 @@
 #include "main.h"
 /**
+ * print_str - prints a string
+ *
+ * @s: string to print
+ *
+ * Return: number of charackters printed
+ */
+int print_str(char *s)
+{
+	int i;
+
+	if (s == NULL)
+		return (-1);
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		_putchar(s[i]);
+	}
+
+	return (i);
+}
+/**
+ * print_char - prints a character
+ *
+ * @c: character to print
+ *
+ * Return: 1
+ */
+int print_char(char c)
+{
+	_putchar(c);
+	return (1);
+}
+/**
 * _printf - function produces a string according to format.
 * @format: string with 0 or more directives.
 * Return: Number of characters outputted.
 */
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	char temp;
-	int count = 0;
-	char *temp_s;
-	int j;
+	int i = 0, count = 0;
+	char temp, *temp_s;
 	va_list arg;
 
 	va_start(arg, format);
@@ -28,20 +58,11 @@ int _printf(const char *format, ...)
 			{
 			case 'c':
 				temp = va_arg(arg, int);
-				_putchar(temp);
-				count++;
+				count += print_char(temp);
 				break;
 			case 's':
 				temp_s = va_arg(arg, char *);
-
-				if (temp_s == NULL)
-					return (-1);
-
-				for (j = 0; temp_s[j] != '\0'; j++)
-				{
-					_putchar(temp_s[j]);
-					count++;
-				}
+				count += print_str(temp_s);
 				break;
 			case '%':
 				_putchar('%');
