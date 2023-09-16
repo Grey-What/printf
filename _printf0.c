@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 
 	while (format[i] != '\0')
 	{
@@ -46,6 +46,7 @@ int _printf(const char *format, ...)
 				break;
 			default:
 				i++;
+				break;
 			}
 		}
 		else
