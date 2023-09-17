@@ -8,10 +8,8 @@
  */
 void print_num(int nums, int *count)
 {
-	if (!nums)
-		return (-1);
-
-	int temp_num = nums;
+	int temp_num;
+	temp_num = nums;
 
 	if (nums < 0)
 	{
