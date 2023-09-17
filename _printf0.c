@@ -4,6 +4,8 @@
  *
  * @num: number to print
  *
+ * @count: counter
+ *
  * Return: nothing
  */
 void print_num(int nums, int *count)
@@ -98,7 +100,8 @@ int _printf(const char *format, ...)
 				temp_num = va_arg(arg, int);
 				print_num(temp_num, &count);
 				break;
-			case 'i':temp_num = va_arg(arg, int);
+			case 'i':
+				temp_num = va_arg(arg, int);
 				print_num(temp_num, &count);
 				break;
 			default:

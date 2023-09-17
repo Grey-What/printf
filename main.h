@@ -5,6 +5,21 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+/**
+* struct func_match : match the convesrion specifiers with conversions
+*
+* @spec: specifier
+*
+* @func: function
+*
+* @func_match: match function
+*/
+
+typedef struct func_match
+{
+	char *spec;
+	int (*func)();
+} func_match;
 int _putchar(char c);
 int _printf(const char *format, ...);
 
