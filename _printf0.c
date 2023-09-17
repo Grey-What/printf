@@ -24,40 +24,6 @@ void print_num(int nums, int *count)
 	_putchar((temp_num % 10) + '0');
 	(*count)++;
 }
-
-/**
- * print_str - prints a string
- *
- * @s: string to print
- *
- * Return: number of charackters printed
- */
-int print_str(char *s)
-{
-	int i;
-
-	if (s == NULL)
-		return (0);
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		_putchar(s[i]);
-	}
-
-	return (i);
-}
-/**
- * print_char - prints a character
- *
- * @c: character to print
- *
- * Return: 1
- */
-int print_char(char c)
-{
-	_putchar(c);
-	return (1);
-}
 /**
 * _printf - function produces a string according to format.
 * @format: string with 0 or more directives.
