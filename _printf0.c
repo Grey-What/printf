@@ -1,5 +1,30 @@
 #include "main.h"
 /**
+ * print_num - function conversts a number to a string and prints it
+ *
+ * @num: number to print
+ *
+ * Return: nothing
+ */
+void print_num(int nums, int *count)
+{
+	int temp_num = nums;
+
+	if (nums < 0)
+	{
+		_putchar('-');
+		(*count)++;
+		temp_num = -temp_num;
+	}
+	if (temp_num / 10 != 0)
+	{
+		print_num(temp_num / 10, count);
+	}
+	_putchar((temp_num % 10) + '0');
+	(*count)++;
+}
+
+/**
  * print_str - prints a string
  *
  * @s: string to print
@@ -39,14 +64,15 @@ int print_char(char c)
 */
 int _printf(const char *format, ...)
 {
-	int i, count = 0;
+	int i, temp_num, count = 0;
 	char temp, *temp_s;
 	va_list arg;
 
 	va_start(arg, format);
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL)
 		return (-1);
+
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%' && format[i + 1] != '\0')
@@ -66,6 +92,13 @@ int _printf(const char *format, ...)
 			case '%':
 				_putchar('%');
 				count++;
+				break;
+			case 'd':
+				temp_num = va_arg(arg, int);
+				print_num(temp_num, &count);
+				break;
+			case 'i':temp_num = va_arg(arg, int);
+				print_num(temp_num, &count);
 				break;
 			default:
 				_putchar(format[i]);
