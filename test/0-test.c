@@ -11,6 +11,7 @@ int main()
 	char mod = '%';
 
 	_printf("i am testing to print a char: %c", c);
+	_printf("");
 	_printf("I am testing to print a string: %s", s);
 	_printf("i am testing to print a %\: %%", mod);
 

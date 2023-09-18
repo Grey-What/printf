@@ -15,7 +15,6 @@ int main(void)
     void *addr;
 
     len = _printf("Let's try to printf a simple sentence.\n");
-    printf("length provided by count: %d", len);
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
@@ -39,7 +38,29 @@ int main(void)
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-/*    _printf("Unknown:[%r]\n");*/
-/*    printf("Unknown:[%r]\n");*/
+    _printf("Unknown:[%r]\n");
+/**    printf("Unknown:[%r]\n");*/
+
+    _printf("-----------------------\n\n");
+
+      _printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+/*    printf("This is a normal %\n");*/
+    _printf("This is a normal %\n");
+
+    printf("a number: %i\n", -3106);
+    _printf("a number: %i\n", -3106);
+    printf("another number: %d\n", 8943);
+    _printf("another number: %d\n", 8943);
+
+/**    printf("Binary: %b\n", 85);
+    _printf("Binary: %b\n", 85);
+
+    printf("Unsigned: %u\n", 1992);
+    _printf("Unsigned: %u\n", 1992);
+
+    printf("Octal: %o\n", 88);
+    _printf("Octal: %o\n", 88);
+*/
     return (0);
 }
