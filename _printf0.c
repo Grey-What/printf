@@ -9,10 +9,8 @@ int _printf(const char *format, ...)
 	int i, j, count = 0;
 	va_list arg;
 
-	get_func func_match[] =
-	{
-		{'c', print_char}, {'s', print_str}, {'0', NULL}
-	};
+	get_func func_match[] = { {'c', print_char}, {'s', print_str},
+				  {'0', NULL} };
 
 	va_start(arg, format);
 
@@ -27,7 +25,7 @@ int _printf(const char *format, ...)
 
 			for (j = 0; func_match[j].spec != '0'; j++)
 			{
-				if(func_match[j].spec == format[i])
+				if (func_match[j].spec == format[i])
 				{
 					count += func_match[j].func(arg);
 				}
