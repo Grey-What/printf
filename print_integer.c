@@ -11,14 +11,14 @@ int _strlen(char *s)
 {
 	int count = 0;
 
-	while(s[count] != '\0')
+	while (s[count] != '\0')
 	{
 		count++;
 	}
 	return (count);
 }
 /**
-* print_integer - print a integer
+* print_int - print a integer
 *
 * @arg: arguement for integer
 *
@@ -28,8 +28,7 @@ int _strlen(char *s)
 int print_int(va_list arg)
 {
 	int num = 0, len = 0, i = 0, j, is_negative = 0, digit;
-	char temp;
-	char s[35];
+	char temp, s[35];
 
 	num = va_arg(arg, int);
 
@@ -53,23 +52,17 @@ int print_int(va_list arg)
 			i++;
 		}
 		if (is_negative == 1)
-		{
-			s[i] = '-';
-			i++;
-		}
+			s[i++] = '-';
 		s[i] = '\0';
 		len =  _strlen(s);
-
 		for (j = 0; j < len / 2; j++)
 		{
 			temp = s[j];
 			s[j] = s[len - j - 1];
 			s[len - j - 1] = temp;
 		}
-		for(j = 0; s[j] != '\0'; j++)
-		{
+		for (j = 0; s[j] != '\0'; j++)
 			_putchar(s[j]);
-		}
 		return (len);
 	}
 
