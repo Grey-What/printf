@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	va_list arg;
 
 	get_func func_match[] = { {'c', print_char}, {'s', print_str},
-				  {'0', NULL} };
+				  {'i', print_int}, {'0', NULL} };
 
 	va_start(arg, format);
 
