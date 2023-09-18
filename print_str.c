@@ -6,9 +6,12 @@
  *
  * Return: number of charackters printed
  */
-int print_str(char *s)
+int print_str(va_list arg)
 {
-        int i;
+	char *s;
+        int i, len  = 0;
+
+	s = va_arg(arg, char *);
 
         if (s == NULL)
                 return (0);
@@ -16,7 +19,8 @@ int print_str(char *s)
         for (i = 0; s[i] != '\0'; i++)
         {
                 _putchar(s[i]);
+		len++;
         }
 
-        return (i);
+        return (len);
 }

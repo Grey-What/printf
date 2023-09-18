@@ -1,51 +1,22 @@
 #include "main.h"
 /**
- * print_num - function conversts a number to a string and prints it
- *
- * @num: number to print
- *
- * @count: counter
- *
- * Return: nothing
- */
-void print_num(int nums, int *count)
-{
-	int temp_num;
-	temp_num = nums;
-
-	if (nums < 0)
-	{
-		_putchar('-');
-		(*count)++;
-		temp_num = -temp_num;
-	}
-	if (temp_num / 10 != 0)
-	{
-		print_num(temp_num / 10, count);
-	}
-	_putchar((temp_num % 10) + '0');
-	(*count)++;
-}
-/**
 * _printf - function produces a string according to format.
 * @format: string with 0 or more directives.
 * Return: Number of characters outputted.
 */
 int _printf(const char *format, ...)
 {
-	int i, temp_num, count = 0;
-	char temp, *temp_s;
+	int i, j, count = 0;
 	va_list arg;
 
-	va_start(arg, format);
-	
-	get_func func_matchi[] =
+	get_func func_match[] =
 	{
-		{'c', print_char}, {'s', print_str},{NULL, NULL}
+		{'c', print_char}, {'s', print_str}, {'0', NULL}
 	};
 
+	va_start(arg, format);
 
-	if (format == NULL || format[0] == '%' && format[1] == '\0')
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	for (i = 0; format && format[i] != '\0'; i++)
@@ -53,9 +24,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			i++;
-			int j ;
 
-			for (j = 0; func_match[j].spec != NULL; j++)
+			for (j = 0; func_match[j].spec != '0'; j++)
 			{
 				if(func_match[j].spec == format[i])
 				{
@@ -66,7 +36,6 @@ int _printf(const char *format, ...)
 		else
 		{
 			count += _putchar(format[i]);
-			
 		}
 	}
 	va_end(arg);

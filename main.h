@@ -3,6 +3,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
 
 /**
@@ -18,13 +19,11 @@
 
 typedef struct get_func
 {
-	char *spec;
-	int (*func)();
-<<<<<<< HEAD
-} func_match;
-=======
+	char spec;
+	int (*func)(va_list);
 } get_func;
->>>>>>> 936552cff31d515fd3652fe530cc54d11700a011
+
+get_func func_match[5];
 
 int _putchar(char c);
 int _printf(const char *format, ...);
