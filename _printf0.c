@@ -12,7 +12,6 @@ int _printf(const char *format, ...)
 	get_func func_match[] = { {'c', print_char}, {'s', print_str},
 				  {'i', print_int}, {'d', print_int},
 				  {'0', NULL} };
-
 	va_start(arg, format);
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -25,21 +24,25 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '%')
 			{
-				_putchar('%');
-				count += 1;
+				count += _putchar('%');
 			}
-			for (j = 0; func_match[j].spec != '0'; j++)
+			else
 			{
-				if (func_match[j].spec == format[i])
+				for (j = 0; func_match[j].spec != '0'; j++)
 				{
-					count += func_match[j].func(arg);
+					if (func_match[j].spec == format[i])
+					{
+						count += func_match[j].func(arg);
+						break;
+					}
 				}
+				if (func_match[j].spec == '0')
+					count += _putchar(format[i]);
 			}
+
 		}
 		else
-		{
 			count += _putchar(format[i]);
-		}
 	}
 	va_end(arg);
 	return (count);
