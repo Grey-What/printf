@@ -38,8 +38,14 @@ int _printf(const char *format, ...)
 	va_list arg;
 
 	va_start(arg, format);
+	
+	get_func func_matchi[] =
+	{
+		{'c', print_char}, {'s', print_str},{NULL, NULL}
+	};
 
-	if (format == NULL)
+
+	if (format == NULL || format[0] == '%' && format[1] == '\0')
 		return (-1);
 
 	for (i = 0; format && format[i] != '\0'; i++)
@@ -47,38 +53,20 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			i++;
+			int j ;
 
-			switch (format[i])
+			for (j = 0; func_match[j].spec != NULL; j++)
 			{
-			case 'c':
-				temp = va_arg(arg, int);
-				count += print_char(temp);
-				break;
-			case 's':
-				temp_s = va_arg(arg, char *);
-				count += print_str(temp_s);
-				break;
-			case '%':
-				_putchar('%');
-				count++;
-				break;
-			case 'd':
-				temp_num = va_arg(arg, int);
-				print_num(temp_num, &count);
-				break;
-			case 'i':
-				temp_num = va_arg(arg, int);
-				print_num(temp_num, &count);
-				break;
-			default:
-				_putchar(format[i]);
-				break;
+				if(func_match[j].spec == format[i])
+				{
+					count += func_match[j].func(arg);
+				}
 			}
 		}
 		else
 		{
-			_putchar(format[i]);
-			count++;
+			count += _putchar(format[i]);
+			
 		}
 	}
 	va_end(arg);

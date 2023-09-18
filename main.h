@@ -16,15 +16,15 @@
 *
 */
 
-typedef struct func_match
+typedef struct get_func
 {
 	char *spec;
 	int (*func)();
-} func_match;
+} get_func;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_char(char c);
-int print_str(char *s);
+int print_char(va_list arg);
+int print_str(va_list arg);
 
 #endif
