@@ -20,6 +20,7 @@ typedef struct func_match
 	char *spec;
 	int (*func)();
 } func_match;
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(char c);
