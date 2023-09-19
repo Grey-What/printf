@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 				  {'i', print_int}, {'d', print_int},
 				  {'b', print_bin}, {'u', print_unsign},
 				  {'o', print_oct}, {'x', print_hex},
-				  {'X', print_Hex},
+				  {'X', print_Hex}, {'r', print_rev},
 				  {'0', NULL} };
 	va_start(arg, format);
 
