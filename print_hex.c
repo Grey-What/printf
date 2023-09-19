@@ -2,7 +2,7 @@
 /**
 * print_hex - convert a decimal to hexadecimal.
 *
-* arg: argument decimal number.
+* @arg: argument decimal number.
 *
 * Return: number of characters
 */
@@ -51,7 +51,7 @@ int print_hex(va_list arg)
 /**
 * print_Hex - convert a decimal to hexadecimal using uppercase.
 *
-* arg: argument decimal number.
+* @arg: argument decimal number.
 *
 * Return: number of characters
 */
