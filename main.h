@@ -7,7 +7,7 @@
 #include <stdarg.h>
 
 /**
-* struct func_match - match the convesrion specifiers with conversions
+* struct get_func - match the convesrion specifiers with conversions
 *
 * @spec: specifier
 *
