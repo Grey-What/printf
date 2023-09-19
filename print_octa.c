@@ -2,7 +2,7 @@
 /**
 * print_oct - convert a decimal number into octal.
 *
-* arg: arguement unsigned int.
+* @arg: arguement unsigned int.
 *
 * Return: number of characters printed
 */
