@@ -33,4 +33,5 @@ int print_int(va_list arg);
 int print_bin(va_list arg);
 int _strlen(char *s);
 int print_unsign(va_list arg);
+int print_oct(va_list arg);
 #endif
