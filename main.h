@@ -23,7 +23,7 @@ typedef struct get_func
 	int (*func)(va_list);
 } get_func;
 
-get_func func_match[5];
+get_func func_match[10];
 
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -32,4 +32,5 @@ int print_str(va_list arg);
 int print_int(va_list arg);
 int print_bin(va_list arg);
 int _strlen(char *s);
+int print_unsign(va_list arg);
 #endif
