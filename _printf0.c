@@ -9,12 +9,10 @@ int _printf(const char *format, ...)
 	int i, j, count = 0;
 	va_list arg;
 
-	get_func func_match[] = { {'c', print_char}, {'s', print_str},
-				  {'i', print_int}, {'d', print_int},
-				  {'b', print_bin}, {'u', print_unsign},
-				  {'o', print_oct}, {'x', print_hex},
-				  {'X', print_Hex}, {'r', print_rev},
-				  {'0', NULL} };
+	get_func func_match[] = {
+		{'c', print_char}, {'s', print_str}, {'i', print_int}, {'d', print_int},
+		{'b', print_bin}, {'u', print_unsign}, {'o', print_oct}, {'x', print_hex},
+		{'X', print_Hex}, {'r', print_rev}, {'0', NULL} };
 	va_start(arg, format);
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -26,9 +24,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '%')
-			{
 				count += _putchar('%');
-			}
 			else
 			{
 				for (j = 0; func_match[j].spec != '0'; j++)
