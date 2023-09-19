@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 		{'X', print_Hex}, {'r', print_rev}, {'0', NULL} };
 	va_start(arg, format);
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL || (format[0] == '%' && format[1] == '\0') || format == "")
 		return (-1);
 
 	for (i = 0; format && format[i] != '\0'; i++)
