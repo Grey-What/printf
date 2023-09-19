@@ -35,5 +35,5 @@ int _strlen(char *s);
 int print_unsign(va_list arg);
 int print_oct(va_list arg);
 int print_hex(va_list arg);
-/**int print_Hex(va_list arg);*/
+int print_Hex(va_list arg);
 #endif
