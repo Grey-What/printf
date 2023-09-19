@@ -2,7 +2,7 @@
 /**
 * print_bin - convert a decimal number into binary.
 *
-* arg: arguement decimal number.
+* @arg: arguement decimal number.
 *
 * Return: number of characters
 */
