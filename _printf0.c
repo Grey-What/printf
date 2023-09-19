@@ -12,7 +12,8 @@ int _printf(const char *format, ...)
 	get_func func_match[] = { {'c', print_char}, {'s', print_str},
 				  {'i', print_int}, {'d', print_int},
 				  {'b', print_bin}, {'u', print_unsign},
-				  {'o', print_oct},
+				  {'o', print_oct}, {'h', print_hex},
+				  /**{'H', print_Hex},*/
 				  {'0', NULL} };
 	va_start(arg, format);
 
