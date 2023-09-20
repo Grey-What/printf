@@ -1,4 +1,4 @@
-# 0x11. C - printf
+# **0x11. C - printf**
 
 The printf project is the first group project for the ALX SE course. The objective was to recreate the printf function provided in standard library with some custom specifier using all the knowledge gained from all previous projects and to develop our team working skills. Listed below are the tasks associated with this project.
 
